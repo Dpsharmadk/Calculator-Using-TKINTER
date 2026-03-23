@@ -15,8 +15,6 @@ This is a simple calculator made using Python and Tkinter.
 2. Run the file:
 
 ```
-python calculator.py
-```
 
 ## Description
 
