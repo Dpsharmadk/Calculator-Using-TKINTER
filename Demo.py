@@ -30,14 +30,34 @@ def clear():
     entry.delete(0, tk.END)
 
 def calculate():
+    global first_number, operator
+
     try:
-        result = eval(entry.get())
+        second_number = float(entry.get())
+
+        if operator == "+":
+            result = first_number + second_number
+        elif operator == "-":
+            result = first_number - second_number
+        elif operator == "*":
+            result = first_number * second_number
+        elif operator == "/":
+            if second_number == 0:
+                entry.delete(0, tk.END)
+                entry.insert(0, "Cannot divide by 0")
+                return
+            result = first_number / second_number
+        else:
+            entry.delete(0, tk.END)
+            entry.insert(0, "Error")
+            return
+
         entry.delete(0, tk.END)
-        entry.insert(0, result)
+        entry.insert(0, str(result))
+
     except:
         entry.delete(0, tk.END)
         entry.insert(0, "Error")
-
 
 
 #BUTTONS
