@@ -91,7 +91,9 @@ tk.Button(root, text="C", font=("Arial", 16),
 def key_event(event):
     key = event.char
 
-    if key in "0123456789+-*/.":
+    if key in "0123456789.":
+        press(key)
+    elif key in "+-*/":
         press(key)
     elif key == "\r":  # Enter
         calculate()
