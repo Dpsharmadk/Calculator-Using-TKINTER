@@ -8,10 +8,23 @@ root.configure(bg="#1e1e1e")
 #Adding inputs to our calculator
 entry = tk.Entry(root, font=("Arial", 24), bg="#2d2d2d", fg="white",borderwidth=0, justify="right")
 entry.pack(fill="both", ipadx=8, ipady=20, padx=10, pady=10)
+first_number = None
+operator = None
 
 # Instead of messy +,-,* we use this logic to perform calculations 
 def press(value):
-    entry.insert(tk.END, value)
+    global first_number, operator
+
+    if value in "+-*/":
+        try:
+            first_number = float(entry.get())
+            operator = value
+            entry.delete(0, tk.END)
+        except:
+            entry.delete(0, tk.END)
+            entry.insert(0, "Error")
+    else:
+        entry.insert(tk.END, value)
 
 def clear():
     entry.delete(0, tk.END)
