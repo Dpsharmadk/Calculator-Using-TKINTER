@@ -1,6 +1,6 @@
 # Tkinter Calculator
 
-This is a simple calculator made using Python and Tkinter.
+This is a smart calculator made using Python and Tkinter.
 
 ## Features
 
@@ -8,7 +8,10 @@ This is a simple calculator made using Python and Tkinter.
 * Subtraction
 * Multiplication
 * Division
-
+* Modern dark UI
+* Keyboard support
+* Real-time calculation
+* Error handling
 ## How to Run
 
 1. Install Python
